@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:id="@+id/above"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/hybrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HYBRID"
+            />
+        <Button
+            android:id="@+id/satellite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SATELLITE"
+            />
+
+        <Button
+            android:id="@+id/terrain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TERRAIN"
+            />
+
+        <Button
+            android:id="@+id/indoor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INDOOR"
+            />
+
+        <Button
+            android:id="@+id/circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CIRCLE"
+            />
+    </LinearLayout>
+    <fragment
+        android:layout_below="@+id/above"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        tools:context=".activities.GoogleMapActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+</RelativeLayout>

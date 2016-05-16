@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "435211487633",
+    "project_id": "default-demo-app-9a6c5"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435211487633:android:32665c8d5d8d6ace",
+        "android_client_info": {
+          "package_name": "com.example.vaishaliarora.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435211487633-mrr98ra6e662qqho8hdmee3eprrh85e0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vaishaliarora.myapplication",
+            "certificate_hash": "54A36CD8C8E49B87FD31B36C75184F5FFDBF3300"
+          }
+        },
+        {
+          "client_id": "435211487633-q6hul465jgj925242l6sldtnh8molicj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8WdpZBiKSqhTPjB7wGnn5S89H6FEsCso"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu1"
+        android:title="Menu Item1"
+        android:showAsAction="always"
+        />
+    <item
+        android:id="@+id/menu2"
+        android:title="Menu Item2"
+        android:showAsAction="always"
+        />
+    <item
+        android:id="@+id/menu3"
+        android:title="Menu Item3"
+        >
+        <menu>
+        <item
+            android:id="@+id/submenu1"
+            android:title="Sub Menu Item1"
+            />
+        <item
+            android:id="@+id/submenu2"
+            android:title="Sub Menu Item2"
+            />
+        <item
+            android:id="@+id/submenu3"
+            android:title="Sub Menu Item3"
+            />
+
+    </menu>
+    </item>
+    <item
+        android:id="@+id/menu4"
+        android:title="Menu Item4"
+        android:showAsAction="always"
+        />
+
+</menu>

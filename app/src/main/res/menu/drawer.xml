@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_payment_fragment"
+            android:src="@mipmap/ic_launcher"
+            android:title="Payment Gateway" />
+        <item
+            android:id="@+id/nav_calender_fragment"
+            android:src="@mipmap/ic_launcher"
+            android:title="Calender" />
+        <item
+            android:id="@+id/nav_social_netw_fragment"
+            android:src="@mipmap/ic_launcher"
+            android:title="Social Networking" />
+
+        <item
+            android:id="@+id/nav_list_card_fragment"
+            android:src="@mipmap/ic_launcher"
+            android:title="List and Card Layout" />
+
+        <item
+            android:id="@+id/nav_map_fragment"
+            android:src="@mipmap/ic_launcher"
+            android:title="Map" />
+    </group>
+</menu>
