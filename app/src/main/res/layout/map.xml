@@ -16,4 +16,12 @@
         android:text="Path between two points"
         />
 
+    <Button
+        android:id="@+id/cluster"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Customise marker cluster"
+        />
+
+
 </LinearLayout>

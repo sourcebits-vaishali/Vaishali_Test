@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CalendarView
+    android:id="@+id/claendar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" />
+

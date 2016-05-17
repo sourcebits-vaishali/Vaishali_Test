@@ -80,6 +80,9 @@
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAvOHGGxzw8GS4pPWfVgBOAtapz5wtXj2k"/>
 
         <activity android:name=".activities.PathActivity"/>
+        <activity android:name=".activities.ClusterActivity"/>
+        <activity android:name=".activities.SimpleCalender"/>
+        <activity android:name=".activities.CustomCalender"/>
     </application>
 
 </manifest>

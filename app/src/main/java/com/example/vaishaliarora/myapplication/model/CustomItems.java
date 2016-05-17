@@ -7,10 +7,12 @@ public class CustomItems {
 
     private String header;
     private String item;
+    private boolean isFruit;
 
-    public CustomItems(String header, String item){
+    public CustomItems(String header, String item, boolean isFruit){
         this.header = header;
         this.item = item;
+        this.isFruit = isFruit;
     }
 
     public String getHeader() {
@@ -20,5 +22,10 @@ public class CustomItems {
     public String getItem() {
         return item;
     }
+
+    public boolean isFruit() {
+        return isFruit;
+    }
+
 
 }

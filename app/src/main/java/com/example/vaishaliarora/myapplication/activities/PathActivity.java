@@ -72,7 +72,7 @@ public class PathActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.path_map);
         markerPoints = new ArrayList<>();
-//        fm.getMapAsync(this);
+        fm.getMapAsync(this);
 
     }
 
