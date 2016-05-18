@@ -1,44 +1,32 @@
-package com.example.vaishaliarora.myapplication.activities;
-
-import android.app.Activity;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-
-import com.example.vaishaliarora.myapplication.R;
-import com.example.vaishaliarora.myapplication.adapter.TestAdapter;
-import com.example.vaishaliarora.myapplication.model.CustomItems;
+package com.example.vaishaliarora.myapplication.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by vaishaliarora on 12/05/16.
+ * Created by vaishaliarora on 18/05/16.
  */
-public class ListActivity extends Activity {
+public class UIConfiguration {
+    private static ViewMode viewMode;
 
-
-    private RecyclerView mRecyclerView;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_activity);
-
-        mRecyclerView = (RecyclerView)findViewById(R.id.list_view);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.setHasFixedSize(true);
-
-
-        List elements = getListElements();
-        TestAdapter adapter = new TestAdapter(this , elements);
-        adapter.createDataModel();
-        mRecyclerView.setAdapter(adapter);
+    public static ViewMode getViewMode() {
+        return viewMode;
     }
 
-    public List<CustomItems> getListElements(){
+    public static void setViewMode(ViewMode mode) {
+        viewMode = mode;
+    }
+
+    public enum ViewMode{
+        GRID_VIEW,
+        NORMAL_VIEW
+    }
+
+    /**
+     *
+     * @return must return the list with sorted Headers
+     */
+    public static List<CustomItems> getListElements(){
         List listElements = new ArrayList();
 
         CustomItems item1 = new CustomItems("Fruit","Apple", true);
@@ -77,9 +65,8 @@ public class ListActivity extends Activity {
         listElements.add(item12);
         listElements.add(item13 );
 
-
-
         return listElements;
     }
+
 
 }

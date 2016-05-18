@@ -3,18 +3,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/recycler_list"
+    <TextView
+        android:id="@+id/text"
+        android:layout_margin="10dp"
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recycler Viiew"
-        />
-
-    <Button
-        android:id="@+id/card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Card View"
         />
 
 </LinearLayout>

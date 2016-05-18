@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:padding="10dp"
+    android:background="@android:color/darker_gray"
     android:layout_height="match_parent">
-
-    <Button
-        android:id="@+id/recycler_list"
+    <TextView
+        android:textColor="@android:color/white"
+        android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recycler Viiew"
-        />
-
-    <Button
-        android:id="@+id/card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Card View"
-        />
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
 
 </LinearLayout>

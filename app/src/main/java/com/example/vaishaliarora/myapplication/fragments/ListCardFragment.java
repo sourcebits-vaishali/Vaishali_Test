@@ -10,35 +10,43 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.vaishaliarora.myapplication.R;
-import com.example.vaishaliarora.myapplication.activities.ListActivity;
+import com.example.vaishaliarora.myapplication.activities.CardActivity;
+import com.example.vaishaliarora.myapplication.activities.RecyclerViewActivity;
 
 /**
  * Created by vaishaliarora on 12/05/16.
  */
-public class ListCardFragment extends Fragment {
+public class ListCardFragment extends Fragment implements View.OnClickListener{
+
+    private Button mRecyclerViewActivity, mCardActivity;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.list_card, container, false);
-        Button list = (Button)view.findViewById(R.id.list);
-        Button card = (Button)view.findViewById(R.id.card);
+        mRecyclerViewActivity= (Button)view.findViewById(R.id.recycler_list);
+        mCardActivity= (Button)view.findViewById(R.id.card);
 
-        list.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity() , ListActivity.class));
-            }
-        });
-
-        card.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        mRecyclerViewActivity.setOnClickListener(this);
+        mCardActivity.setOnClickListener(this);
 
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        Class targetClass = null;
+        switch(id){
+            case R.id.recycler_list:
+                targetClass = RecyclerViewActivity.class;
+                break;
+            case R.id.card:
+                targetClass = CardActivity.class;
+                break;
+        }
+
+        startActivity(new Intent(getActivity(), targetClass));
     }
 }

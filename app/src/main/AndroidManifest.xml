@@ -56,7 +56,7 @@
         <activity android:name="io.card.payment.DataEntryActivity" />
 
         <activity android:name=".activities.GooglePlusActivity"/>
-        <activity android:name=".activities.ListActivity"/>
+        <activity android:name=".activities.RecyclerViewActivity"/>
         <activity android:name=".activities.CardActivity"/>
         <activity android:name=".activities.OtpActivity"/>
 
