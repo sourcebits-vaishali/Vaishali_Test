@@ -16,6 +16,7 @@ import android.view.MenuItem;
 
 import com.example.vaishaliarora.myapplication.R;
 import com.example.vaishaliarora.myapplication.fragments.CalenderFragment;
+import com.example.vaishaliarora.myapplication.fragments.Chats;
 import com.example.vaishaliarora.myapplication.fragments.ListCardFragment;
 import com.example.vaishaliarora.myapplication.fragments.MapFragment;
 import com.example.vaishaliarora.myapplication.fragments.PayementFragment;
@@ -88,6 +89,9 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.nav_map_fragment:
                 fragmentClass = MapFragment.class;
+                break;
+            case R.id.nav_chat_fragment:
+                fragmentClass = Chats.class;
                 break;
 
             default:
