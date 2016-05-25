@@ -27,7 +27,4 @@
     <string name="lbl_enter_otp">Enter OTP</string>
     <string name="lbl_submit">SUBMIT</string>
 
-    <string name="title_section1">Favourites</string>
-    <string name="title_section2">Chats</string>
-    <string name="title_section3">Contacts</string>
 </resources>

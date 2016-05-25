@@ -25,8 +25,9 @@
             android:title="Map" />
 
         <item
-            android:id="@+id/nav_chat_fragment"
+            android:id="@+id/nav_map_fragment"
             android:src="@mipmap/ic_launcher"
-            android:title="Chat" />
+            android:title="Map" />
+
     </group>
 </menu>
