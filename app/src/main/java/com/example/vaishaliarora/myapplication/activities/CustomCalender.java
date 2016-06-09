@@ -27,12 +27,9 @@ public class CustomCalender extends Activity {
 
         CalendarView cv = ((CalendarView)findViewById(R.id.calendar_view));
         cv.updateCalendar(events);
-
-        // assign event handler
         cv.setEventHandler(new CalendarView.EventHandler() {
             @Override
             public void onDayLongPress(Date date) {
-                // show returned day
                 DateFormat df = SimpleDateFormat.getDateInstance();
                 Toast.makeText(CustomCalender.this, df.format(date), Toast.LENGTH_SHORT).show();
             }
