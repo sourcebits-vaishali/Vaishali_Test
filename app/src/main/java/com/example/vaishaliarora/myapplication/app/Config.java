@@ -1,8 +1,6 @@
 package com.example.vaishaliarora.myapplication.app;
 
-/**
- * Created by vaishaliarora on 13/05/16.
- */
+
 public class Config {
     // server URL configuration
     public static final String URL_REQUEST_SMS = "http://192.168.0.101/android_sms/msg91/request_sms.php";

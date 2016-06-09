@@ -31,20 +31,14 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by vaishaliarora on 13/05/16.
- */
 public class OtpActivity extends Activity implements View.OnClickListener{
 
     private static String TAG = OtpActivity.class.getSimpleName();
 
     private ViewPager viewPager;
-    private ViewPagerAdapter adapter;
-    private Button btnRequestSms, btnVerifyOtp;
     private EditText inputName, inputEmail, inputMobile, inputOtp;
     private ProgressBar progressBar;
     private PrefManager pref;
-    private ImageButton btnEditMobile;
     private TextView txtEditMobile;
     private LinearLayout layoutEditMobile;
 
@@ -59,17 +53,12 @@ public class OtpActivity extends Activity implements View.OnClickListener{
         inputEmail = (EditText) findViewById(R.id.inputEmail);
         inputMobile = (EditText) findViewById(R.id.inputMobile);
         inputOtp = (EditText) findViewById(R.id.inputOtp);
-        btnRequestSms = (Button) findViewById(R.id.btn_request_sms);
-        btnVerifyOtp = (Button) findViewById(R.id.btn_verify_otp);
+        (findViewById(R.id.btn_request_sms)).setOnClickListener(this);
+        (findViewById(R.id.btn_verify_otp)).setOnClickListener(this);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        btnEditMobile = (ImageButton) findViewById(R.id.btn_edit_mobile);
+        (findViewById(R.id.btn_edit_mobile)).setOnClickListener(this);
         txtEditMobile = (TextView) findViewById(R.id.txt_edit_mobile);
         layoutEditMobile = (LinearLayout) findViewById(R.id.layout_edit_mobile);
-
-        // view click listeners
-        btnEditMobile.setOnClickListener(this);
-        btnRequestSms.setOnClickListener(this);
-        btnVerifyOtp.setOnClickListener(this);
 
         // hiding the edit mobile number
         layoutEditMobile.setVisibility(View.GONE);
@@ -86,7 +75,7 @@ public class OtpActivity extends Activity implements View.OnClickListener{
             finish();
         }
 
-        adapter = new ViewPagerAdapter();
+        ViewPagerAdapter adapter = new ViewPagerAdapter();
         viewPager.setAdapter(adapter);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -236,7 +225,7 @@ public class OtpActivity extends Activity implements View.OnClickListener{
              */
             @Override
             protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap<>();
                 params.put("name", name);
                 params.put("email", email);
                 params.put("mobile", mobile);
@@ -289,7 +278,7 @@ public class OtpActivity extends Activity implements View.OnClickListener{
 
         @Override
         public boolean isViewFromObject(View view, Object object) {
-            return view == ((View) object);
+            return view == object;
         }
 
         public Object instantiateItem(View collection, int position) {

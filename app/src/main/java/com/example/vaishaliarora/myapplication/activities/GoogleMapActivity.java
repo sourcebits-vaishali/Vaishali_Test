@@ -22,7 +22,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class GoogleMapActivity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener,GoogleMap.OnMapLongClickListener,GoogleMap.OnMapClickListener {
 
     private GoogleMap mMap;
-    private Button hybrid,satellite,terrain, indoor,circle;
     private SupportMapFragment mapFragment;
     private int mapType;
     private boolean isIndoor = false;
@@ -33,25 +32,19 @@ public class GoogleMapActivity extends FragmentActivity implements OnMapReadyCal
         super.onCreate(savedInstanceState);
         setContentView(R.layout.google_map);
 
-        hybrid = (Button)findViewById(R.id.hybrid);
-        satellite = (Button)findViewById(R.id.satellite);
-        terrain = (Button)findViewById(R.id.terrain);
-        indoor = (Button)findViewById(R.id.indoor);
-        circle = (Button)findViewById(R.id.circle);
+        (findViewById(R.id.hybrid)).setOnClickListener(this);
+        (findViewById(R.id.satellite)).setOnClickListener(this);
+        (findViewById(R.id.terrain)).setOnClickListener(this);
+        (findViewById(R.id.indoor)).setOnClickListener(this);
+        (findViewById(R.id.circle)).setOnClickListener(this);
 
-        hybrid.setOnClickListener(this);
-        satellite.setOnClickListener(this);
-        terrain.setOnClickListener(this);
-        indoor.setOnClickListener(this);
-        circle.setOnClickListener(this);
-
-        mapFragment = (SupportMapFragment) getSupportFragmentManager()          //Map Fragment works in API 18 or above but to work with lower end devices u have to use supportmap fragment instead of Map fragment
+        mapFragment = (SupportMapFragment) getSupportFragmentManager()          //Map Fragment works in API 18 or above but to work with lower end devices u have to use support map fragment instead of Map fragment
                                                                                 //and also add the supported API.
                 .findFragmentById(R.id.map);
         mapType = GoogleMap.MAP_TYPE_NORMAL;
         mapFragment.getMapAsync(this);
     }
-    LatLng sydney = new LatLng(-34, 151);
+    private LatLng sydney = new LatLng(-34, 151);
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;

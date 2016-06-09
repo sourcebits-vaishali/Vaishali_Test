@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu1"
-        android:title="Menu Item1"
-        android:showAsAction="always"
+        android:title="@string/menu_item1"
+        app:showAsAction="ifRoom"
         />
     <item
         android:id="@+id/menu2"
-        android:title="Menu Item2"
-        android:showAsAction="always"
+        android:title="@string/menu_item2"
+        app:showAsAction="ifRoom"
         />
     <item
         android:id="@+id/menu3"
-        android:title="Menu Item3"
+        android:title="@string/menu_item3"
         >
         <menu>
         <item
             android:id="@+id/submenu1"
-            android:title="Sub Menu Item1"
+            android:title="@string/sub_menu_item1"
             />
         <item
             android:id="@+id/submenu2"
-            android:title="Sub Menu Item2"
+            android:title="@string/sub_menu_item2"
             />
         <item
             android:id="@+id/submenu3"
-            android:title="Sub Menu Item3"
+            android:title="@string/sub_menu_item3"
             />
 
     </menu>
     </item>
     <item
         android:id="@+id/menu4"
-        android:title="Menu Item4"
-        android:showAsAction="always"
+        android:title="@string/menu_item4"
+        app:showAsAction="ifRoom"
         />
 
 </menu>

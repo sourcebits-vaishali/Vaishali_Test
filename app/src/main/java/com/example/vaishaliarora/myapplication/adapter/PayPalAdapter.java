@@ -12,33 +12,31 @@ import com.example.vaishaliarora.myapplication.model.Items;
 
 import java.util.List;
 
-/**
- * Created by vaishaliarora on 11/05/16.
- */
+
 public class PayPalAdapter extends BaseAdapter {
 
     private PayPalListener payPalListener;
-    public void setOnPayPalListener(PayPalListener listener){
+    private void setOnPayPalListener(PayPalListener listener){
         payPalListener = listener;
     }
 
-    private List<Items> items;
-    private Context context;
+    private final List<Items> mItems;
+    private final Context mContext;
 
     public PayPalAdapter(Context ctx,List<Items> items , PayPalListener listener){
-        this.context = ctx;
-        this.items = items;
+        this.mContext = ctx;
+        this.mItems = items;
         setOnPayPalListener(listener);
     }
 
     @Override
     public int getCount() {
-        return items.size();
+        return mItems.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return items.get(position);
+        return mItems.get(position);
     }
 
     @Override
@@ -46,30 +44,31 @@ public class PayPalAdapter extends BaseAdapter {
         return 0;
     }
 
-    ViewHolder holder;
+
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+        ViewHolder viewHolder;
         if(null == convertView){
-            convertView = ViewGroup.inflate(context, R.layout.paypal_item, null);
-            holder = new ViewHolder();
-            holder.itemName = (TextView)convertView.findViewById(R.id.itemName);
-            holder.itemPrice = (TextView)convertView.findViewById(R.id.itemPrice);
-            holder.pay = (Button)convertView.findViewById(R.id.pay);
-            convertView.setTag(holder);
+            convertView = ViewGroup.inflate(mContext, R.layout.paypal_item, null);
+            viewHolder = new ViewHolder();
+            viewHolder.itemName = (TextView)convertView.findViewById(R.id.itemName);
+            viewHolder.itemPrice = (TextView)convertView.findViewById(R.id.itemPrice);
+            viewHolder.pay = (Button)convertView.findViewById(R.id.pay);
+            convertView.setTag(viewHolder);
 
         }else{
-            holder = (ViewHolder)convertView.getTag();
+            viewHolder = (ViewHolder)convertView.getTag();
         }
 
 
-        holder.itemName.setText(items.get(position).getItemName());
-        holder.itemPrice.setText("$ "+items.get(position).getItemPrice());
+        viewHolder.itemName.setText(mItems.get(position).getItemName());
+        viewHolder.itemPrice.setText(String.format(mContext.getString(R.string.dollar_symbol) , mItems.get(position).getItemPrice()));
 
-        holder.pay.setOnClickListener(new View.OnClickListener() {
+        viewHolder.pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                payPalListener.payPalAction(items.get(position));
+                payPalListener.payPalAction(mItems.get(position));
             }
         });
 

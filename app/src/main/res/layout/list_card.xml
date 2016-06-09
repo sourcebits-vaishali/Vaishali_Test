@@ -7,14 +7,14 @@
         android:id="@+id/recycler_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recycler Viiew"
+        android:text="@string/recycler_view"
         />
 
     <Button
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Card View"
+        android:text="@string/card_view"
         />
 
 </LinearLayout>

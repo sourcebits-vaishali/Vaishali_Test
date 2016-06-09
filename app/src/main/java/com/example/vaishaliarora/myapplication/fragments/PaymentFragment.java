@@ -16,7 +16,7 @@ import com.example.vaishaliarora.myapplication.activities.PayPalActivity;
 /**
  * Created by vaishaliarora on 11/05/16.
  */
-public class PayementFragment extends Fragment implements View.OnClickListener{
+public class PaymentFragment extends Fragment implements View.OnClickListener{
 
     @Nullable
     @Override

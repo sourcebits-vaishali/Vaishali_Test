@@ -13,15 +13,10 @@ import com.example.vaishaliarora.myapplication.helper.PrefManager;
 
 import java.util.HashMap;
 
-/**
- * Created by vaishaliarora on 13/05/16.
- */
-
 
 public class SMSVerification extends AppCompatActivity {
 
     private PrefManager pref;
-    private TextView name, email, mobile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +24,9 @@ public class SMSVerification extends AppCompatActivity {
         setContentView(R.layout.sms_verification);
 
 
-        name = (TextView) findViewById(R.id.name);
-        email = (TextView) findViewById(R.id.email);
-        mobile = (TextView) findViewById(R.id.mobile);
+        TextView name = (TextView) findViewById(R.id.name);
+        TextView email = (TextView) findViewById(R.id.email);
+        TextView mobile = (TextView) findViewById(R.id.mobile);
 
         pref = new PrefManager(getApplicationContext());
 
@@ -43,9 +38,9 @@ public class SMSVerification extends AppCompatActivity {
 
         // Displaying user information from shared preferences
         HashMap<String, String> profile = pref.getUserDetails();
-        name.setText("Name: " + profile.get("name"));
-        email.setText("Email: " + profile.get("email"));
-        mobile.setText("Mobile: " + profile.get("mobile"));
+        name.setText(String.format(getString(R.string.name_text), profile.get("name")));
+        email.setText(String.format(getString(R.string.email_text), profile.get("email")));
+        mobile.setText(String.format(getString(R.string.mobile_text), profile.get("mobile")));
     }
 
     /**

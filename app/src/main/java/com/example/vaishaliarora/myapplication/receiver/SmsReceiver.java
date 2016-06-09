@@ -41,9 +41,9 @@ public class SmsReceiver extends BroadcastReceiver {
 
                     Log.e(TAG, "OTP received: " + verificationCode);
 
-                    Intent hhtpIntent = new Intent(context, HttpService.class);
-                    hhtpIntent.putExtra("otp", verificationCode);
-                    context.startService(hhtpIntent);
+                    Intent httpIntent = new Intent(context, HttpService.class);
+                    httpIntent.putExtra("otp", verificationCode);
+                    context.startService(httpIntent);
                 }
             }
         } catch (Exception e) {

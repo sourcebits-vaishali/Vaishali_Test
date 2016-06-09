@@ -7,7 +7,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:text="Item1"
+        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:id="@+id/itemName"
@@ -18,8 +18,10 @@
         />
 
     <TextView
-        android:text="100"
+        android:layout_toEndOf="@+id/itemName"
+        android:layout_toRightOf="@+id/itemName"
        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:id="@+id/itemPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +31,8 @@
         android:id="@+id/pay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PAY"
+        android:text="@string/pay"
+        android:layout_alignParentEnd="true"
         android:layout_below="@+id/itemPrice"
         android:layout_alignParentRight="true"
         />

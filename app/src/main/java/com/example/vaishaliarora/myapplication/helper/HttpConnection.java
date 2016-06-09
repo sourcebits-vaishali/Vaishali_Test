@@ -30,10 +30,7 @@ public class HttpConnection {
         // Output format
         String output = "json";
 
-        // Building the url to the web service
-        String url = "https://maps.googleapis.com/maps/api/directions/"+output+"?"+parameters;
-
-        return url;
+        return "https://maps.googleapis.com/maps/api/directions/"+output+"?"+parameters;
     }
 
     /** A method to download json data from url */
@@ -57,9 +54,9 @@ public class HttpConnection {
 
             BufferedReader br = new BufferedReader(new InputStreamReader(iStream));
 
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
 
-            String line = "";
+            String line ;
             while( ( line = br.readLine()) != null){
                 sb.append(line);
             }
@@ -71,8 +68,10 @@ public class HttpConnection {
         }catch(Exception e){
             Log.d("Maps", "Exception while downloading url" + e.toString());
         }finally{
-            iStream.close();
-            urlConnection.disconnect();
+            if(iStream != null)
+                iStream.close();
+            if(urlConnection != null)
+                urlConnection.disconnect();
         }
         return data;
     }

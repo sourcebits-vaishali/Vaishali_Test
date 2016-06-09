@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.vaishaliarora.myapplication.R;
@@ -14,9 +15,7 @@ import com.example.vaishaliarora.myapplication.model.UIConfiguration;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by vaishaliarora on 17/05/16.
- */
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.DataViewHolder> {
 
     private static final int VIEW_TYPE_HEADER = 0;
@@ -24,9 +23,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private static final int VIEW_TYPE_GRID_FILE = 2;
     private static final int VIEW_TYPE_FOOTER = 3;
 
-    private LayoutInflater mInflater;
-    private List<RowItem> mRowItemList = new ArrayList<>();
-    private  List<CustomItems> mAllFiles;
+    private final LayoutInflater mInflater;
+    private final List<RowItem> mRowItemList = new ArrayList<>();
+    private  final List<CustomItems> mAllFiles;
 
     public RecyclerViewAdapter(Context context, List<CustomItems> inputElements) {
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -55,6 +54,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         if (item.itemType == VIEW_TYPE_ITEM) {
             holder.mTextViewName.setText(item.fileName);
+            //For setting alternate row color in vertical orientation.
+            /*int color = (position % 2 == 0)? Color.RED : Color.YELLOW;
+            holder.mItemLayout.setBackgroundColor(color);*/
         } else if (item.itemType == VIEW_TYPE_HEADER) {
             holder.mTextViewName.setText(item.headerText);
         } else {
@@ -80,7 +82,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public boolean isHeader(int position) {
-        return mRowItemList.get(position).itemType == VIEW_TYPE_HEADER;
+        return (mRowItemList.get(position).itemType == VIEW_TYPE_HEADER);
     }
 
     public boolean isFooter(int position) {
@@ -88,10 +90,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public static class RowItem {
-        private int lastHeaderIndex;
+        private final int lastHeaderIndex;
         private String headerText;
-        private int itemType;
-        private CustomItems dkFile;
+        private final int itemType;
+        private final CustomItems dkFile;
         String fileName;
 
         public RowItem(CustomItems file, int itemType, int lastHeaderIndex) {
@@ -119,13 +121,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public class DataViewHolder extends RecyclerView.ViewHolder {
-        TextView mTextViewName;
+        private TextView mTextViewName;
+        private LinearLayout mItemLayout;
 
         public DataViewHolder(View view, int viewType) {
             super(view);
             mTextViewName = (TextView) view.findViewById(R.id.text);
-            if (viewType == VIEW_TYPE_HEADER ) {
-                return;
+            if(viewType == VIEW_TYPE_ITEM){
+                mItemLayout = (LinearLayout)view.findViewById(R.id.item_layout);
             }
         }
     }

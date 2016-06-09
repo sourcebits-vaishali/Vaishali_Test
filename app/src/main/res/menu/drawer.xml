@@ -4,30 +4,39 @@
         <item
             android:id="@+id/nav_payment_fragment"
             android:src="@mipmap/ic_launcher"
-            android:title="Payment Gateway" />
+            android:title="@string/payment_gateway" />
         <item
             android:id="@+id/nav_calender_fragment"
             android:src="@mipmap/ic_launcher"
-            android:title="Calender" />
+            android:title="@string/calender" />
         <item
             android:id="@+id/nav_social_netw_fragment"
             android:src="@mipmap/ic_launcher"
-            android:title="Social Networking" />
+            android:title="@string/social_networking" />
 
         <item
             android:id="@+id/nav_list_card_fragment"
             android:src="@mipmap/ic_launcher"
-            android:title="List and Card Layout" />
+            android:title="@string/list_card_layout" />
 
         <item
             android:id="@+id/nav_map_fragment"
             android:src="@mipmap/ic_launcher"
-            android:title="Map" />
+            android:title="@string/map" />
+        <item
+        android:id="@+id/nav_sqlite_fragment"
+        android:src="@mipmap/ic_launcher"
+        android:title="@string/sqlite_db" />
 
         <item
-            android:id="@+id/nav_map_fragment"
+            android:id="@+id/nav_imgLib_fragment"
             android:src="@mipmap/ic_launcher"
-            android:title="Map" />
+            android:title="@string/img_lib" />
+
+        <item
+            android:id="@+id/nav_others_fragment"
+            android:src="@mipmap/ic_launcher"
+            android:title="@string/others" />
 
     </group>
 </menu>

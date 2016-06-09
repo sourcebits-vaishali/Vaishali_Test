@@ -2,11 +2,8 @@ package com.example.vaishaliarora.myapplication.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.widget.Toast;
 
 import com.example.vaishaliarora.myapplication.R;
-import com.example.vaishaliarora.myapplication.model.MyItem;
-import com.example.vaishaliarora.myapplication.model.MyItemReader;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -16,14 +13,12 @@ import com.google.android.gms.maps.model.LatLng;
 import org.json.JSONException;
 
 import java.io.InputStream;
-import java.util.List;
 
 /**
  * Created by vaishaliarora on 16/05/16.
  */
-public class ClusterActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
+public class ClusterActivity extends FragmentActivity implements OnMapReadyCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +33,8 @@ public class ClusterActivity extends FragmentActivity implements OnMapReadyCallb
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(51.503186, -0.126446), 10));
+        GoogleMap map = googleMap;
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(51.503186, -0.126446), 10));
 
        /* mClusterManager = new ClusterManager<MyItem>(this, mMap);
         mMap.setOnCameraChangeListener(mClusterManager);
@@ -53,7 +48,7 @@ public class ClusterActivity extends FragmentActivity implements OnMapReadyCallb
 
     private void readItems() throws JSONException {
         InputStream inputStream = getResources().openRawResource(R.raw.radar_search);
-        List<MyItem> items = new MyItemReader().read(inputStream);
+//        List<MyItem> items = new MyItemReader().read(inputStream);
 //        mClusterManager.addItems(items);
     }
 }

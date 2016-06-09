@@ -16,18 +16,14 @@ import com.android.volley.toolbox.Volley;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by vaishaliarora on 13/05/16.
- */
 
 public class MyApplication extends Application {
 
-    public static final String TAG = MyApplication.class
+    private static final String TAG = MyApplication.class
             .getSimpleName();
 
     private RequestQueue mRequestQueue;
-    public static String[] email_arr;
-    private static SharedPreferences prefs;
+
 
     private static MyApplication mInstance;
 
@@ -35,10 +31,10 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mInstance = this;
-        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         List<String> emailList = getEmailList();
-        email_arr = emailList.toArray(new String[emailList.size()]);
+        String[] email_arr = emailList.toArray(new String[emailList.size()]);
     }
 
     public static synchronized MyApplication getInstance() {
@@ -70,7 +66,7 @@ public class MyApplication extends Application {
     }
 
     private List<String> getEmailList() {
-        List<String> lst = new ArrayList<String>();
+        List<String> lst = new ArrayList<>();
         Account[] accounts = AccountManager.get(this).getAccounts();
         for (Account account : accounts) {
             if (Patterns.EMAIL_ADDRESS.matcher(account.name).matches()) {

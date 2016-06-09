@@ -7,20 +7,20 @@
         android:id="@+id/map1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="map"
+        android:text="@string/map"
         />
     <Button
         android:id="@+id/path"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Path between two points"
+        android:text="@string/path_btn_2_points"
         />
 
     <Button
         android:id="@+id/cluster"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Customise marker cluster"
+        android:text="@string/cluster"
         />
 
 

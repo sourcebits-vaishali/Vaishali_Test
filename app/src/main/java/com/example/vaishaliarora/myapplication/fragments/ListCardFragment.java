@@ -18,18 +18,13 @@ import com.example.vaishaliarora.myapplication.activities.RecyclerViewActivity;
  */
 public class ListCardFragment extends Fragment implements View.OnClickListener{
 
-    private Button mRecyclerViewActivity, mCardActivity;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.list_card, container, false);
-        mRecyclerViewActivity= (Button)view.findViewById(R.id.recycler_list);
-        mCardActivity= (Button)view.findViewById(R.id.card);
-
-        mRecyclerViewActivity.setOnClickListener(this);
-        mCardActivity.setOnClickListener(this);
+        (view.findViewById(R.id.recycler_list)).setOnClickListener(this);
+        (view.findViewById(R.id.card)).setOnClickListener(this);
 
         return view;
     }

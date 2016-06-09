@@ -24,9 +24,6 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by vaishaliarora on 11/05/16.
- */
 public class PayPalActivity extends Activity implements PayPalAdapter.PayPalListener{
 
     /**
@@ -48,7 +45,6 @@ public class PayPalActivity extends Activity implements PayPalAdapter.PayPalList
             .merchantPrivacyPolicyUri(Uri.parse("https://www.example.com/privacy"))
             .merchantUserAgreementUri(Uri.parse("https://www.example.com/legal"));
 
-    private PayPalAdapter.PayPalListener listener;
     private Items itemBought;
     private List listElements;
     private PayPalAdapter adapter;
@@ -65,7 +61,7 @@ public class PayPalActivity extends Activity implements PayPalAdapter.PayPalList
 
         ListView listView = (ListView)findViewById(R.id.paypal_list);
         listElements = getItems();
-        listener = this;
+        PayPalAdapter.PayPalListener listener = this;
 
          adapter = new PayPalAdapter(this , listElements , listener);
         listView.setAdapter(adapter);

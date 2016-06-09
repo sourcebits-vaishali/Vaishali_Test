@@ -10,12 +10,11 @@
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.javapapers.android.maps.path.permission.MAPS_RECEIVE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
 
     <permission
         android:name="com.appsrox.instachat.permission.C2D_MESSAGE"
@@ -69,7 +68,9 @@
         <activity android:name=".activities.SMSVerification"/>
 
         <!-- SMS Receiver -->
-        <receiver android:name=".receiver.SmsReceiver">
+        <receiver android:name=".receiver.SmsReceiver"
+            android:permission="android.permission.BROADCAST_SMS"
+            >
             <intent-filter android:priority="99999">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>

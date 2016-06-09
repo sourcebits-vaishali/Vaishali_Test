@@ -27,4 +27,63 @@
     <string name="lbl_enter_otp">Enter OTP</string>
     <string name="lbl_submit">SUBMIT</string>
 
+    <string name="dollar_symbol">$ %d </string>
+
+    <string name="add">Add</string>
+    <string name="setting">Settings</string>
+
+    <string name="menu_item1">MenuItem1</string>
+    <string name="menu_item2">MenuItem2</string>
+    <string name="menu_item3">MenuItem3</string>
+    <string name="menu_item4">MenuItem4</string>
+    <string name="sub_menu_item1">Sub MenuItem1</string>
+    <string name="sub_menu_item2">Sub MenuItem2</string>
+    <string name="sub_menu_item3">Sub MenuItem3</string>
+
+    <string name="payment_gateway"> Payment Gateway</string>
+    <string name="calender">Calender</string>
+    <string name="social_networking">Social Networking</string>
+    <string name="list_card_layout">List and Card Layout</string>
+    <string name="map">Map</string>
+    <string name="sqlite_db">SQLite Database</string>
+    <string name="img_lib">Image Library</string>
+    <string name="others">Others</string>
+
+    <string name="recycler_view">Recycler View</string>
+    <string name="card_view">Card View</string>
+
+    <string name="path_btn_2_points">Path between two points</string>
+    <string name="cluster">Customise marker cluster</string>
+
+    <string name="pay">Pay</string>
+
+    <string name="fb">Facebook</string>
+    <string name="tw">Twitter</string>
+    <string name="ln">Linked In</string>
+    <string name="yahoo">Yahoo</string>
+    <string name="googe_plus">Google +</string>
+    <string name="youtube_api">Youtube API</string>
+
+    <string name="hybrid_map">Hybrid</string>
+    <string name="satellite_map">Satellite</string>
+    <string name="terrain_map">Terrain</string>
+    <string name="circle_map">Circle</string>
+    <string name="indoor_map">Indoor</string>
+
+    <string name="simple_cal">Simple Calender</string>
+    <string name="custom_cal">Custom Calender</string>
+
+    <string name="toggle">Toggle</string>
+
+    <string name="paypal">Paypal</string>
+    <string name="one_time_pass">One Time Password</string>
+
+    <string name="name_text">Name %s</string>
+    <string name="email_text">Email %s</string>
+    <string name="mobile_text">Mobile %s</string>
+
+    <string name="item">Item %d</string>
+
+    <string name="wallpaper">Select any image to set as a wallpaper</string>
+
 </resources>

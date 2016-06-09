@@ -12,7 +12,6 @@
     tools:context=".MainActivity">
 
     <com.example.vaishaliarora.myapplication.model.CalendarView
-        xmlns:calendarNS="http://schemas.android.com/apk/res/com.example.vaishaliarora.myapplication.model"
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

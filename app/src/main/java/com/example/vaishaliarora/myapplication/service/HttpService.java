@@ -104,7 +104,7 @@ public class HttpService extends IntentService {
 
             @Override
             protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap<>();
                 params.put("otp", otp);
 
                 Log.e(TAG, "Posting params: " + params.toString());

@@ -14,34 +14,39 @@
             android:id="@+id/hybrid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HYBRID"
+            android:text="@string/hybrid_map"
+            style="?android:attr/buttonBarButtonStyle"
             />
         <Button
             android:id="@+id/satellite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SATELLITE"
+            android:text="@string/satellite_map"
+            style="?android:attr/buttonBarButtonStyle"
             />
 
         <Button
             android:id="@+id/terrain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TERRAIN"
+            android:text="@string/terrain_map"
+            style="?android:attr/buttonBarButtonStyle"
             />
 
         <Button
             android:id="@+id/indoor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="INDOOR"
+            android:text="@string/indoor_map"
+            style="?android:attr/buttonBarButtonStyle"
             />
 
         <Button
             android:id="@+id/circle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CIRCLE"
+            android:text="@string/circle_map"
+            style="?android:attr/buttonBarButtonStyle"
             />
     </LinearLayout>
     <fragment

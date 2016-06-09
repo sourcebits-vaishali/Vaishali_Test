@@ -22,11 +22,11 @@ public class SocialNetworkFragment extends Fragment implements View.OnClickListe
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         
         View view = inflater.inflate(R.layout.social_network,container,false);
-        ((Button)view.findViewById(R.id.fb)).setOnClickListener(this);
-        ((Button)view.findViewById(R.id.tw)).setOnClickListener(this);
-        ((Button)view.findViewById(R.id.ln)).setOnClickListener(this);
-        ((Button)view.findViewById(R.id.google_plus)).setOnClickListener(this);
-        ((Button)view.findViewById(R.id.yahoo)).setOnClickListener(this);
+        (view.findViewById(R.id.fb)).setOnClickListener(this);
+        (view.findViewById(R.id.tw)).setOnClickListener(this);
+        (view.findViewById(R.id.ln)).setOnClickListener(this);
+        (view.findViewById(R.id.google_plus)).setOnClickListener(this);
+        (view.findViewById(R.id.yahoo)).setOnClickListener(this);
         return view;
     }
 

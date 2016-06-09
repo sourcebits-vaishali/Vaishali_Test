@@ -7,35 +7,42 @@
         android:id="@+id/fb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Facebook"
+        android:text="@string/fb"
         />
 
     <Button
         android:id="@+id/tw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Twitter"
+        android:text="@string/tw"
         />
 
     <Button
         android:id="@+id/ln"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LinkedIn"
+        android:text="@string/ln"
         />
 
     <Button
         android:id="@+id/yahoo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Yahoo"
+        android:text="@string/yahoo"
         />
 
     <Button
         android:id="@+id/google_plus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GooglePlus"
+        android:text="@string/googe_plus"
+        />
+
+    <Button
+        android:id="@+id/youtube_api"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/youtube_api"
         />
 
 </LinearLayout>

@@ -5,9 +5,6 @@ import android.os.Bundle;
 
 import com.example.vaishaliarora.myapplication.R;
 
-/**
- * Created by vaishaliarora on 17/05/16.
- */
 public class SimpleCalender extends Activity {
 
     @Override

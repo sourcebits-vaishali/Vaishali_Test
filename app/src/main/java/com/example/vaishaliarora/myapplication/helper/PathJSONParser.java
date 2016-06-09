@@ -21,10 +21,10 @@ public class PathJSONParser {
      */
     public List<List<HashMap<String, String>>> parse(JSONObject jObject) {
 
-        List<List<HashMap<String, String>>> routes = new ArrayList<List<HashMap<String, String>>>();
-        JSONArray jRoutes = null;
-        JSONArray jLegs = null;
-        JSONArray jSteps = null;
+        List<List<HashMap<String, String>>> routes = new ArrayList<>();
+        JSONArray jRoutes ;
+        JSONArray jLegs ;
+        JSONArray jSteps ;
 
         try {
 
@@ -33,7 +33,7 @@ public class PathJSONParser {
             /** Traversing all routes */
             for (int i = 0; i < jRoutes.length(); i++) {
                 jLegs = ((JSONObject) jRoutes.get(i)).getJSONArray("legs");
-                List path = new ArrayList<HashMap<String, String>>();
+                List path = new ArrayList<>();
 
                 /** Traversing all legs */
                 for (int j = 0; j < jLegs.length(); j++) {
@@ -47,9 +47,9 @@ public class PathJSONParser {
 
                         /** Traversing all points */
                         for (int l = 0; l < list.size(); l++) {
-                            HashMap<String, String> hm = new HashMap<String, String>();
-                            hm.put("lat", Double.toString(((LatLng) list.get(l)).latitude));
-                            hm.put("lng", Double.toString(((LatLng) list.get(l)).longitude));
+                            HashMap<String, String> hm = new HashMap<>();
+                            hm.put("lat", Double.toString(( list.get(l)).latitude));
+                            hm.put("lng", Double.toString((list.get(l)).longitude));
                             path.add(hm);
                         }
                     }
@@ -60,6 +60,7 @@ public class PathJSONParser {
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (Exception e) {
+            e.printStackTrace();
         }
 
         return routes;
@@ -71,7 +72,7 @@ public class PathJSONParser {
      */
     private List<LatLng> decodePoly(String encoded) {
 
-        List<LatLng> poly = new ArrayList<LatLng>();
+        List<LatLng> poly = new ArrayList<>();
         int index = 0, len = encoded.length();
         int lat = 0, lng = 0;
 

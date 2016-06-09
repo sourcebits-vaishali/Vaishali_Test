@@ -12,13 +12,9 @@ import com.example.vaishaliarora.myapplication.adapter.RecyclerViewAdapter;
 import com.example.vaishaliarora.myapplication.model.DividerItemDecoration;
 import com.example.vaishaliarora.myapplication.model.UIConfiguration;
 
-/**
- * Created by vaishaliarora on 12/05/16.
- */
 public class RecyclerViewActivity extends Activity {
 
     private GridLayoutManager mManager;
-    private RecyclerView mRecyclerView;
 
     private RecyclerViewAdapter mAdapter;
     private UIConfiguration.ViewMode mCurrentMode;
@@ -32,18 +28,18 @@ public class RecyclerViewActivity extends Activity {
 
         Button toggle = (Button)findViewById(R.id.toggle);
 
-        mRecyclerView = (RecyclerView)findViewById(R.id.list_view);
-        mRecyclerView.setHasFixedSize(true);
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.list_view);
+        recyclerView.setHasFixedSize(true);
 
 
         mManager = new GridLayoutManager(this, RecyclerViewAdapter.getUiSpanCount());
-        mRecyclerView.setLayoutManager(mManager);
+        recyclerView.setLayoutManager(mManager);
 
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, R.drawable.divider));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, R.drawable.divider));
 
         mAdapter = new RecyclerViewAdapter(this , UIConfiguration.getListElements());
         mAdapter.createDataModel();
-        mRecyclerView.setAdapter(mAdapter);
+        recyclerView.setAdapter(mAdapter);
 
         mManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override

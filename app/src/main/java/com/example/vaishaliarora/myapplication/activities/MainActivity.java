@@ -11,14 +11,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.vaishaliarora.myapplication.R;
 import com.example.vaishaliarora.myapplication.fragments.CalenderFragment;
+import com.example.vaishaliarora.myapplication.fragments.ImageLoaderFragment;
 import com.example.vaishaliarora.myapplication.fragments.ListCardFragment;
 import com.example.vaishaliarora.myapplication.fragments.MapFragment;
-import com.example.vaishaliarora.myapplication.fragments.PayementFragment;
+import com.example.vaishaliarora.myapplication.fragments.OthersFragment;
+import com.example.vaishaliarora.myapplication.fragments.PaymentFragment;
 import com.example.vaishaliarora.myapplication.fragments.SocialNetworkFragment;
 
 
@@ -28,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private Toolbar mToolbar;
-    NavigationView mNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +37,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mNavigationView = (NavigationView) findViewById(R.id.nvView);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nvView);
         // Setup drawer view
-        setupDrawerContent(mNavigationView);
+        setupDrawerContent(navigationView);
 
         mToolbar = (Toolbar)findViewById(R.id.toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+        if( getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+        }
 
         mDrawerToggle = setupDrawerToggle();
 
@@ -73,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         Class fragmentClass;
         switch(menuItem.getItemId()) {
             case R.id.nav_payment_fragment:
-                fragmentClass = PayementFragment.class;
+                fragmentClass = PaymentFragment.class;
                 break;
             case R.id.nav_calender_fragment:
                 fragmentClass = CalenderFragment.class;
@@ -89,9 +91,22 @@ public class MainActivity extends AppCompatActivity {
             case R.id.nav_map_fragment:
                 fragmentClass = MapFragment.class;
                 break;
+            case R.id.nav_sqlite_fragment:
+                fragmentClass = MapFragment.class;
+                break;
+
+            case R.id.nav_imgLib_fragment:
+                fragmentClass = ImageLoaderFragment.class;
+                break;
+
+            case R.id.nav_others_fragment :
+                fragmentClass = OthersFragment.class;
+                break;
+
+
 
             default:
-                fragmentClass = PayementFragment.class;
+                fragmentClass = PaymentFragment.class;
         }
 
         try {
@@ -116,19 +131,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.main, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // The action bar home/up action should open or close the drawer.
-        // ActionBarDrawerToggle will take care of this.
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-      return super.onOptionsItemSelected(item);
+      return mDrawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
 
 
@@ -142,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        // Pass any configuration change to the drawer toggls
+        // Pass any configuration change to the drawer toggles
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 

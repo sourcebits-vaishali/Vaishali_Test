@@ -1,17 +1,14 @@
 package com.example.vaishaliarora.myapplication.activities;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.location.LocationProvider;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -150,7 +147,7 @@ public class PathActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onSuccessfullRouteFetch(final List<List<HashMap<String, String>>> result) {
 
-        //if it takes a long time, we will do it in a seperate thread...
+        //if it takes a long time, we will do it in a separate thread...
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -199,7 +196,7 @@ public class PathActivity extends FragmentActivity implements OnMapReadyCallback
         try {
             List<Address> address = geoCoder.getFromLocation(lat, lng, 1);
             if(address.size()>1){
-                Toast.makeText(PathActivity.this , "LOcation name == == "+address.get(0).getLocality(), Toast.LENGTH_LONG).show();
+                Toast.makeText(PathActivity.this , "Location name == == "+address.get(0).getLocality(), Toast.LENGTH_LONG).show();
             }
         }catch (IOException exception){
             Log.d(TAG , exception.toString());
@@ -230,7 +227,7 @@ public class PathActivity extends FragmentActivity implements OnMapReadyCallback
             try {
                 List<Address> address = geoCoder.getFromLocation(lat, lng, 1);
                 if(address.size()>1){
-                    Toast.makeText(PathActivity.this , "LOcation name == == "+address.get(0).getLocality(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(PathActivity.this , "Location name == == "+address.get(0).getLocality(), Toast.LENGTH_LONG).show();
                     Log.d("VAISHALI##","LOCATOIN NAME == "+address.get(0).getLocality());
                 }
             }catch (IOException exception){
@@ -246,7 +243,7 @@ public class PathActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         Toast.makeText(PathActivity.this , "Connection failed", Toast.LENGTH_LONG).show();
     }
 

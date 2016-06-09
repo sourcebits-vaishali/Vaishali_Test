@@ -18,15 +18,12 @@ import com.example.vaishaliarora.myapplication.activities.SimpleCalender;
 public class CalenderFragment extends Fragment implements View.OnClickListener{
 
 
-    private Button mSimpleCal, mCustomCal;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.calender , container , false);
-        mSimpleCal = (Button)view.findViewById(R.id.simple_cal);
-        mCustomCal = (Button)view.findViewById(R.id.custom_cal);
+        (view.findViewById(R.id.simple_cal)).setOnClickListener(this);
+        (view.findViewById(R.id.custom_cal)).setOnClickListener(this);
 
-        mSimpleCal.setOnClickListener(this);
-        mCustomCal.setOnClickListener(this);
         return view;
     }
 

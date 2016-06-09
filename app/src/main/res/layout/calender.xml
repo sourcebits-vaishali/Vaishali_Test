@@ -8,13 +8,13 @@
         android:id="@+id/simple_cal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Simple Calender"
+        android:text="@string/simple_cal"
         />
 
     <Button
         android:id="@+id/custom_cal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Custom Calender"
+        android:text="@string/custom_cal"
         />
 </LinearLayout>
